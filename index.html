@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP Roadways 3D HD Bus Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js & Sound Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+    <!-- 3D Viewport -->
+    <div id="game-canvas"></div>
+
+    <!-- Live Dashboard / Meter Cluster -->
+    <div class="dashboard-overlay">
+        <div class="meter-box">
+            <span class="label">SPEED</span>
+            <span class="value" id="speed-meter">0</span>
+            <span class="unit">km/h</span>
+        </div>
+        <div class="meter-box">
+            <span class="label">GEAR</span>
+            <span class="value" id="gear-meter">N</span>
+        </div>
+        <div class="meter-box">
+            <span class="label">RPM</span>
+            <span class="value" id="rpm-meter">800</span>
+        </div>
+        <div class="meter-box">
+            <span class="label">AIR BRAKE</span>
+            <span class="value">8.5 Bar</span>
+        </div>
+    </div>
+
+    <!-- On-Screen Controls Panel -->
+    <div class="controls-container">
+        <!-- Left Side: Steering & Lights -->
+        <div class="control-group left">
+            <div class="steering-box">
+                <button class="btn-ctrl btn-steer" id="btn-left">◀ Left</button>
+                <button class="btn-ctrl btn-steer" id="btn-right">Right ▶</button>
+            </div>
+            <div class="light-controls">
+                <button class="btn-ctrl btn-toggle" id="btn-indicator-left">⬅️ Ind Left</button>
+                <button class="btn-ctrl btn-toggle" id="btn-hazard">⚠️ Hazard Light</button>
+                <button class="btn-ctrl btn-toggle" id="btn-indicator-right">Ind Right ➡️</button>
+                <button class="btn-ctrl btn-toggle" id="btn-headlight">💡 Headlight</button>
+            </div>
+        </div>
+
+        <!-- Center: Engine & Horn & Wipers -->
+        <div class="control-group center">
+            <button class="btn-ctrl btn-action btn-start" id="btn-engine">🔑 Engine Start/Stop</button>
+            <div class="double-buttons">
+                <button class="btn-ctrl btn-action" id="btn-horn-normal">📢 Normal Horn</button>
+                <button class="btn-ctrl btn-action" id="btn-horn-pressure">🎺 Pressure Horn</button>
+            </div>
+            <div class="double-buttons">
+                <button class="btn-ctrl btn-action" id="btn-wiper">🌧️ Wiper (Off/Slow/Fast)</button>
+                <button class="btn-ctrl btn-action" id="btn-door">🚪 Door Open/Close</button>
+            </div>
+        </div>
+
+        <!-- Right Side: Pedals (Clutch, Brake, Accel) -->
+        <div class="control-group right">
+            <button class="btn-ctrl btn-pedal btn-clutch" id="btn-clutch">🔴 Clutch</button>
+            <button class="btn-ctrl btn-pedal btn-brake" id="btn-brake">🛑 Brake</button>
+            <button class="btn-ctrl btn-pedal btn-accel" id="btn-accel">⚡ Accelerator</button>
+        </div>
+    </div>
+
+    <footer>
+        Developed by प्रतीक | UP State Road Transport HD 3D Simulator
+    </footer>
+
+    <script src="game.js"></script>
+</body>
+</html>

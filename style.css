@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    user-select: none;
+}
+
+body {
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Dashboard UI */
+.dashboard-overlay {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 15px;
+    background: rgba(15, 23, 42, 0.85);
+    padding: 12px 25px;
+    border-radius: 12px;
+    border: 2px solid #ff7700;
+    backdrop-filter: blur(8px);
+}
+
+.meter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.meter-box .label {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
+.meter-box .value {
+    font-size: 1.4rem;
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+.meter-box .unit {
+    font-size: 0.6rem;
+    color: #ff7700;
+}
+
+/* Controls Area */
+.controls-container {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.steering-box, .light-controls, .double-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Base Button Styling */
+.btn-ctrl {
+    background: rgba(30, 41, 59, 0.85);
+    border: 2px solid #ff7700;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.1s ease;
+}
+
+.btn-ctrl:active, .btn-ctrl.active {
+    background: #ff7700;
+    color: #000;
+    transform: scale(0.95);
+}
+
+.btn-steer {
+    width: 90px;
+    height: 50px;
+    font-size: 1rem;
+}
+
+.btn-toggle {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    border-color: #38bdf8;
+}
+
+.btn-action {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    background: rgba(15, 23, 42, 0.9);
+}
+
+.btn-start {
+    border-color: #22c55e;
+    color: #22c55e;
+}
+
+.btn-start.running {
+    background: #ef4444;
+    color: #fff;
+    border-color: #ef4444;
+}
+
+/* Pedals */
+.btn-pedal {
+    width: 80px;
+    height: 70px;
+    font-size: 0.85rem;
+}
+
+.btn-clutch { border-color: #eab308; }
+.btn-brake { border-color: #ef4444; }
+.btn-accel { border-color: #22c55e; height: 90px; }
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.75rem;
+    z-index: 10;
+}
